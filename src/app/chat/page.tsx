@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import { Header } from "@/sections/Header";
 import { Footer } from "@/sections/Footer";
+import { Button } from "@/components/button";
 
 export default function Chat() {
   const [messages, setMessages] = useState([
@@ -79,7 +80,7 @@ export default function Chat() {
 
   return (
     <>
-      <Header />
+      
       <div className="absolute inset-0 bg-[radial-gradient(75%_75%_at_center_center,rgb(140,69,255,.5)_15%,rgb(14,0,36,.5)_78%,transparent)]"></div>
       {/*start planet*/}
       <div className="absolute h-64 w-64 md:h-96 md:w-96 bg-purple-500 rounded-full border-white/20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(50%_50%_at_16.8%_18.3%,white,rgb(184,148,255)_37.7%,rgb(24,0,66))] shadow-[-20px_-20px_50px_rgb(255,255,255,.5),-20px_-20px_80px_rgb(255,255,255,.1),0_0_50px_rgb(140,69,255)]"></div>
@@ -104,7 +105,7 @@ export default function Chat() {
 
       {/*chat container*/}
       <div className="flex justify-center items-center my-12">
-        <div className="relative w-1/2 lg:w-1/3 h-[700px] border border-black p-4 flex flex-col space-y-4 bg-white rounded-xl z-50">
+        <div className="relative w-1/2 lg:w-1/3 h-[700px] border border-purple-500 p-4 flex flex-col space-y-4 bg-black rounded-xl z-50">
           <div className="flex-grow overflow-auto flex flex-col space-y-2">
             {messages.map((message, index) => (
               <div
@@ -116,8 +117,8 @@ export default function Chat() {
                 <div
                   className={`p-3 rounded-lg text-white max-w-[70%] shadow-md ${
                     message.role === "assistant"
-                      ? "bg-blue-500"
-                      : "bg-green-500"
+                      ? "bg-violet-950"
+                      : "bg-purple-950"
                   } ${
                     expandedMessageIndex === index ||
                     index >= messages.length - 2
@@ -135,7 +136,7 @@ export default function Chat() {
           <div className="flex flex-col sm:flex-row gap-4 w-full">
             <input
               type="text"
-              className="w-[90%] p-2 border border-gray-300 rounded text-black"
+              className="w-[90%] p-2 border border-purple-500 rounded text-black"
               placeholder="Message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
@@ -144,13 +145,13 @@ export default function Chat() {
               }}
               disabled={isLoading}
             />
-            <button
-              className="py-2 px-4 bg-blue-500 text-white rounded w-full sm:w-auto"
+            <Button
+            
               onClick={sendMessage}
               disabled={isLoading}
             >
               {isLoading ? "Sending..." : "Send"}
-            </button>
+            </Button>
           </div>
         </div>
       </div>

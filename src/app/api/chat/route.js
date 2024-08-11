@@ -1,7 +1,7 @@
 import {NextResponse} from 'next/server'
 import OpenAI from 'openai'
 
-const systemPrompt = "You are a helpful assistant who can answer any questions regarding the aiD website"
+const systemPrompt = "You are a helpful assistant who can answer any questions regarding the aiD website."
 
 export async function POST(req) {
   const openai = new OpenAI()
