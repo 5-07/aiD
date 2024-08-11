@@ -1,7 +1,8 @@
-import React from 'react';
-import LogoIcon from '@/assets/logo.svg';
-import MenuIcon from '@/assets/icon-menu.svg';
-import { Button } from '@/components/button';
+import React from "react";
+import LogoIcon from "@/assets/logo.svg";
+import MenuIcon from "@/assets/icon-menu.svg";
+import { Button } from "@/components/button";
+import Link from "next/link";
 
 export const Header = () => {
   return (
@@ -9,19 +10,27 @@ export const Header = () => {
       <div className="container">
         <div className="flex justify-between items-center md:border border-white/15 md:p-2.5 rounded-xl max-w-2xl mx-auto backdrop-blur">
           <div>
-            <div className="border h-10 w-10 rounded-lg inline-flex justify-center items-center border-white/15">
-              <LogoIcon className="h-8 w-8" />
-            </div>
+            <Link href="/">
+              <div className="border h-10 w-10 rounded-lg inline-flex justify-center items-center border-white/15">
+                <LogoIcon className="h-8 w-8" />
+              </div>
+            </Link>
           </div>
           <div className="hidden md:block">
             <nav className="flex gap-8 text-sm">
-              <a href="#" className=" text-white/70 hover:text-white transition"> Developers</a>
-              <a href="#" className=" text-white/70 hover:text-white transition"> Sign Up</a>
-              <a href="#" className=" text-white/70 hover:text-white transition"> Changelog</a>
+              <a
+                href="https://linktr.ee/5_07"
+                className=" text-white/70 hover:text-white transition"
+              >
+                {" "}
+                Developers
+              </a>
             </nav>
           </div>
           <div className="flex gap-4 items-center">
-            <Button>Get Started</Button>
+            <Link href="/chat">
+              <Button>Get Started</Button>
+            </Link>
             <MenuIcon className="md:hidden" />
           </div>
         </div>

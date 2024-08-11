@@ -1,4 +1,5 @@
 import Logo from '@/assets/logo.svg';
+import Link from 'next/link';
 
 export const Footer = () => {
   return ( 
@@ -11,14 +12,13 @@ export const Footer = () => {
         </div>
 
         <div className="flex flex-col lg:flex-row lg:gap-7 gap-5 lg:flex-1 lg:justify-center">
-          <div className="font-medium opacity-70">@5-07 on GitHub</div>
+          <a href="https://github.com/5-07/aiD" className="font-medium opacity-70">@5-07 on GitHub</a>
         
         </div> 
       
-        <nav className="flex flex-col lg:flex-row lg:gap-7 gap-5 lg:flex-1 lg:justify-end">
-          <a href="#"className="text-white/70 hover:text-white text-xs md:text-sm transition">Developers</a>
-          <a href="#"className="text-white/70 hover:text-white text-xs md:text-sm transition">Sign Up</a>
-          <a href="#"className="text-white/70 hover:text-white text-xs md:text-sm transition">Main Page</a>
+        <nav className="relative flex flex-col lg:flex-row lg:gap-7 gap-5 lg:flex-1 lg:justify-end">
+          <a href="https://linktr.ee/5_07"className="text-white/70 hover:text-white text-xs md:text-sm transition">Developers</a>
+          <Link href="/"className="text-white/70 hover:text-white text-xs md:text-sm transition">Main Page</Link>
         </nav>
       
     </div>
