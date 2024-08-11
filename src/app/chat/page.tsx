@@ -146,7 +146,6 @@ export default function Chat() {
               disabled={isLoading}
             />
             <Button
-            
               onClick={sendMessage}
               disabled={isLoading}
             >
