@@ -2,6 +2,7 @@ import React from 'react';
 
 interface ButtonProps extends React.PropsWithChildren {
   onClick?: () => void;
+  disabled?: boolean;
 }
 
 export const Button = (props: ButtonProps) => {
@@ -9,6 +10,7 @@ export const Button = (props: ButtonProps) => {
     <button
       className="relative py-2 px-3 rounded-lg font-medium text-sm bg-gradient-to-b from-[#190d2e] to-[#4a208a] shadow-[0px_0px_12px_#8c45ff]"
       onClick={props.onClick}
+      disabled={props.disabled}
     >
       <div className="absolute inset-0">
         <div className="rounded-lg border border-white/20 absolute inset-0 [mask-image:linear-gradient(to_bottom,black,transparent)]"></div>
