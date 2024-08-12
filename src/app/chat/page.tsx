@@ -104,8 +104,8 @@ export default function Chat() {
       {/*end rings*/}
 
       {/*chat container*/}
-      <div className="flex justify-center items-center my-12">
-        <div className="relative w-1/2 lg:w-1/3 h-[700px] border border-purple-500 p-4 flex flex-col space-y-4 bg-black rounded-xl z-50">
+      <div className="flex justify-center items-center my-12 w-full max-h-[80%] sm:max-h-[70%] md:max-h-[50%]">
+        <div className="relative w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-1/3 h-[500px] sm:h-[500px] md:h-[500px] border border-purple-500 p-4 flex flex-col space-y-4 bg-black rounded-xl z-50">
           <div className="flex-grow overflow-auto flex flex-col space-y-2">
             {messages.map((message, index) => (
               <div
@@ -115,7 +115,7 @@ export default function Chat() {
                 }`}
               >
                 <div
-                  className={`p-3 rounded-lg text-white max-w-[70%] shadow-md ${
+                  className={`p-3 rounded-lg text-white max-w-[90%] sm:max-w-[80%] md:max-w-[70%] shadow-md' ${
                     message.role === "assistant"
                       ? "bg-violet-950"
                       : "bg-purple-950"
@@ -133,7 +133,7 @@ export default function Chat() {
             ))}
             <div ref={messagesEndRef} />
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 w-full">
+          <div className="flex flex-row gap-2 sm:gap-3 md:gap-4 w-full">
             <input
               type="text"
               className="w-[90%] p-2 border border-purple-500 rounded text-black"
